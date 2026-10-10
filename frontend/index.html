@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<title>My tasks | TaskFlow</title>
+</head>
+<body class="app-body">
+<header class="topbar">
+  <a class="brand" href="/">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#4338CA"/><path d="M7 12.5l3.2 3.2L17 8.8" stroke="#FFE45C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    TaskFlow
+  </a>
+  <div class="user">
+    <span id="userName"></span>
+    <button class="btn ghost" id="logoutBtn" type="button">Log out</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hello">
+    <h1 id="greeting">Your tasks</h1>
+    <p id="summary" class="sub"></p>
+  </section>
+
+  <section class="progress" aria-label="Progress">
+    <div class="stat"><span class="num" id="totalTasks">0</span><span>Total</span></div>
+    <div class="stat"><span class="num" id="completedTasks">0</span><span>Done</span></div>
+    <div class="stat"><span class="num" id="pendingTasks">0</span><span>Left</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar">
+      <div id="barFill"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <form class="task-form" id="taskForm">
+      <input type="text" id="taskInput" placeholder="What do you need to do?" maxlength="120" aria-label="Task name" required>
+      <select id="priority" aria-label="Priority">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+      <input type="date" id="deadline" aria-label="Deadline">
+      <button class="btn primary" type="submit">Add task</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="tabs" id="tabs">
+        <button type="button" class="tab active" data-filter="all">All</button>
+        <button type="button" class="tab" data-filter="pending">Left</button>
+        <button type="button" class="tab" data-filter="done">Done</button>
+      </div>
+      <input type="search" id="searchInput" placeholder="Search tasks" aria-label="Search tasks">
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+    <p id="emptyMessage" class="empty" hidden></p>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<title>Log in | TaskFlow</title>
+</head>
+<body class="auth-body">
+<main class="auth">
+  <aside class="notebook" aria-hidden="true">
+    <div class="nb-inner">
+      <p class="nb-brand">TaskFlow</p>
+      <h2>Your study week, on one page.</h2>
+      <ul class="nb-list">
+        <li class="done"><span class="box"></span><span class="mark">Finish physics assignment</span></li>
+        <li class="done"><span class="box"></span><span class="mark">Email professor about the lab</span></li>
+        <li><span class="box"></span>Revise chapter 4 notes</li>
+        <li><span class="box"></span>Submit report by Friday</li>
+      </ul>
+    </div>
+  </aside>
+  <section class="auth-card">
+    <form id="authForm" data-mode="login" novalidate>
+      <p class="m-brand">TaskFlow</p>
+      <h1>Welcome back</h1>
+      <p class="sub">Log in to see your tasks.</p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required autofocus>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p class="form-error" id="formError" role="alert" hidden></p>
+      <button class="btn primary block" type="submit">Log in</button>
+      <p class="switch">New to TaskFlow? <a href="/register">Create an account</a></p>
+    </form>
+  </section>
+</main>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>
